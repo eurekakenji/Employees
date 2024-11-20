@@ -50,11 +50,11 @@ public class App {
                     }
                     break;
 
-                case 4:
-                    if(bookService.print()){
-                        System.out.println("----------- End of list -----------");
-                    }
-                    break;
+                // case 4:
+                 //   if(employeeService.print()){
+                  //      System.out.println("----------- End of list -----------");
+                  //  }
+                  //  break;
                 default:
                     System.out.println("Enter a valid task!");
                     break;
