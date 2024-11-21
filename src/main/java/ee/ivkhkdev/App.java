@@ -2,7 +2,7 @@ package ee.ivkhkdev;
 
 import ee.ivkhkdev.interfaces.Input;
 import ee.ivkhkdev.interfaces.Service;
-import models.Employee;
+import ee.ivkhkdev.model.Employee;
 
 public class App {
     private Input input;

@@ -1,4 +1,4 @@
-package models;
+package ee.ivkhkdev.model;
 
 import java.time.LocalDate;
 import java.util.UUID;

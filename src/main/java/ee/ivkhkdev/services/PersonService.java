@@ -3,7 +3,7 @@ package ee.ivkhkdev.services;
 import ee.ivkhkdev.interfaces.AppHelper;
 import ee.ivkhkdev.interfaces.Repository;
 import ee.ivkhkdev.interfaces.Service;
-import models.Person;
+import ee.ivkhkdev.model.Person;
 
 import java.util.List;
 

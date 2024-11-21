@@ -1,4 +1,4 @@
-package models;
+package ee.ivkhkdev.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -9,17 +9,22 @@ public class Person implements Serializable {
     private String firstName;
     private String lastName;
     private String phone;
-    private LocalDate brithdate;
+    private LocalDate birthdate;
+    private String gender;
+    private String bank;
 
     public Person() {
         this.id = UUID.randomUUID();
     }
-    public Person(String firstName, String lastName, String phone, LocalDate brithdate) {
+    public Person(String firstName, String lastName, String phone, LocalDate brithdate, String gender, String bank) {
         this.id = UUID.randomUUID();
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
-        this.brithdate = brithdate;
+        this.birthdate = brithdate;
+        this.gender = gender;
+        this.bank = bank;
+
 
     }
     public UUID getId() {
@@ -50,11 +55,23 @@ public class Person implements Serializable {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-    public LocalDate getBrithdate() {
-        return brithdate;
+    public LocalDate getBirthdate() {
+        return birthdate;
     }
-    public void setBrithdate(LocalDate brithdate) {
-        this.brithdate = brithdate;
+    public void setBirthdate(LocalDate birthdate) {
+        this.birthdate = birthdate;
+    }
+    public String getGender() {
+        return gender;
+    }
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+    public String getBank() {
+        return bank;
+    }
+    public void setBank(String bank) {
+        this.bank = bank;
     }
 
     @Override
@@ -63,7 +80,7 @@ public class Person implements Serializable {
         if (o == null || getClass() != o.getClass()) return false;
 
         Person person = (Person) o;
-        return brithdate == person.brithdate && id.equals(person.id) && firstName.equals(person.firstName) && lastName.equals(person.lastName) && phone.equals(person.phone);
+        return birthdate == person.birthdate && id.equals(person.id) && firstName.equals(person.firstName) && lastName.equals(person.lastName) && phone.equals(person.phone) && gender.equals(person.gender) && bank.equals(person.bank);
     }
 
     @Override
@@ -72,6 +89,9 @@ public class Person implements Serializable {
         result = 31 * result + firstName.hashCode();
         result = 31 * result + lastName.hashCode();
         result = 31 * result + phone.hashCode();
+        result = 31 * result + birthdate.hashCode();
+        result = 31 * result + gender.hashCode();
+        result = 31 * result + bank.hashCode();
         return result;
     }
 
@@ -82,7 +102,9 @@ public class Person implements Serializable {
                 ", firstName='" + firstName +'\''
                 + ", lastName='" + lastName +'\''
                 + ", phone='" + phone +'\''
-                + ", brithdate=" + brithdate + '\'' +
+                + ", brithdate=" + birthdate + '\'' +
+                ", gender='" + gender + '\'' +
+                ", bank='" + bank + '\'' +
                 "}";
     }
 }

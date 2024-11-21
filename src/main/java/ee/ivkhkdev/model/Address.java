@@ -1,4 +1,4 @@
-package models;
+package ee.ivkhkdev.model;
 
 public class Address {
     private String country;

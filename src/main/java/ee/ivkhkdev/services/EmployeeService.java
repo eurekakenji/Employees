@@ -3,7 +3,7 @@ package ee.ivkhkdev.services;
 import ee.ivkhkdev.interfaces.AppHelper;
 import ee.ivkhkdev.interfaces.Repository;
 import ee.ivkhkdev.interfaces.Service;
-import models.Employee;
+import ee.ivkhkdev.model.Employee;
 
 import java.util.List;
 
@@ -46,5 +46,4 @@ public class EmployeeService implements Service<Employee> {
     public List<Employee> list() {
         return repository.load();
     }
-}
 }

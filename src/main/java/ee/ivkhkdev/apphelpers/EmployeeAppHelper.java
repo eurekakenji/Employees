@@ -1,11 +1,12 @@
 package ee.ivkhkdev.apphelpers;
 
+import ee.ivkhkdev.interfaces.AppHelper;
 import ee.ivkhkdev.interfaces.Input;
-import models.Employee;
+import ee.ivkhkdev.model.Employee;
 
 import java.util.List;
 
-public class EmployeeAppHelper {
+public class EmployeeAppHelper implements AppHelper<Employee>{
     private final Input input;
 
     public EmployeeAppHelper(Input input) {
@@ -16,9 +17,9 @@ public class EmployeeAppHelper {
     public Employee create() {
         Employee employee = new Employee();
         try {
-            System.out.print("Имя: ");
+            System.out.print("Name: ");
             employee.setFirstname(input.nextLine());
-            System.out.print("Фамилия: ");
+            System.out.print("Surname: ");
             employee.setLastname(input.nextLine());
             return employee;
         }catch (Exception e){
@@ -27,11 +28,11 @@ public class EmployeeAppHelper {
     }
 
     @Override
-    public boolean printList(List<Author> authors) {
+    public boolean printList(List<Employee> employees) {
         try {
-            if(authors.size() < 1) return false;
-            for(int i = 0; i < authors.size(); i++){
-                System.out.printf("%d. %s %s%n", i+1,authors.get(i).getFirstname(),authors.get(i).getLastname());
+            if(employees.size() < 1) return false;
+            for(int i = 0; i < employees.size(); i++){
+                System.out.printf("%d. %s %s%n", i+1,employees.get(i).getFirstname(),employees.get(i).getLastname());
             }
             return true;
         }catch (Exception e){
