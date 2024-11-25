@@ -1,5 +1,7 @@
 package ee.ivkhkdev.model;
 
+import ee.ivkhkdev.interfaces.Service;
+
 public class Address {
     private String country;
     private String city;
@@ -72,5 +74,21 @@ public class Address {
         result = 31 * result + houseNumber.hashCode();
         result = 31 * result + apartmentNumber.hashCode();
         return result;
+    }
+
+    public void setTitle(String s) {
+    }
+
+    public Service<Object> getAuthors() {
+        return null;
+    }
+
+    public Object getTitle() {
+    }
+
+    public Object getPublishedYear() {
+    }
+
+    public void setPublishedYear(int i) {
     }
 }
